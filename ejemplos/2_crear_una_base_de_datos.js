@@ -7,10 +7,10 @@
 const { Client } = require('pg');
 
 // Declaramos las variables utilizadas para conectarnos con la base de datos
-const DATABASE_HOST = "";
-const DATABASE_USER = "";
-const DATABASE_PASSWORD = "";
-const DATABASE_PORT = "";
+const DATABASE_HOST = "localhost";
+const DATABASE_USER = "postgres";
+const DATABASE_PASSWORD = "postgres";
+const DATABASE_PORT = "5432";
 
 // Creamos una instancia del objeto Client (aún no estamos conectados, solo llenamos el objetos con los datos)
 const cliente = new Client({
@@ -27,7 +27,7 @@ const crearBaseDeDatos = async (nombreBaseDeDatos) => {
         await cliente.connect();
         await cliente.query(`CREATE DATABASE ${nombreBaseDeDatos}`);
     } catch (error) {
-        return error;
+        throw error;
     } finally {
         await cliente.end();
     }
@@ -37,7 +37,7 @@ const crearBaseDeDatos = async (nombreBaseDeDatos) => {
 // e ingresamos el nombre de la base de datos. Posterior utilizamos "then" para
 // cuando todo ocurre de la forma esperada y la Promesa se resuelve exitosamente
 // y "catch" para manejar el error (solo si existe) generado al momento de crear la base de datos
-crearBaseDeDatos("db_test")
+crearBaseDeDatos("db_tienda_del_vecindario")
     .then(() => {
         console.log('Base de datos creada exitosamente')
     })
