@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-postgres-ejemplos",
+  "version": "1.0.0",
+  "description": "Ejemplos en español sobre Node.js y PostgreSQL como base de datos",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fransafu/nodejs-postgres-ejemplos.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fransafu/nodejs-postgres-ejemplos/issues"
+  },
+  "homepage": "https://github.com/fransafu/nodejs-postgres-ejemplos#readme",
+  "dependencies": {
+    "pg": "^8.8.0"
+  }
+}
